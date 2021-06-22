@@ -2,7 +2,6 @@ import { Wand } from 'src/app/classes/wand';
 import { TransformDate } from "src/app/utils/TransformDate";
 
 export class Profile {
-
     /* Example data */
     /* 
         "name":"Harry Potter",
