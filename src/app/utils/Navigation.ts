@@ -1,9 +1,9 @@
 export class Navigation {
 
   //#region Pages
-  public static CHARACTER: string = 'personajes';  
-  public static STUDENTS: string = 'estudiantes';
-  public static TEACHERS: string = 'profesores';
+  public static CHARACTER: string = 'character';  
+  public static STUDENTS: string = 'students';
+  public static TEACHERS: string = 'teachers';
   //#endregion
 
 }
