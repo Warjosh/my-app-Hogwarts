@@ -10,46 +10,41 @@ import { MatSort } from '@angular/material/sort';
 
 
 @Component({
-  selector: 'app-character',
-  templateUrl: './character.page.html',
-  styleUrls: ['./character.page.scss']
+  selector: 'app-teacher',
+  templateUrl: './teacher.page.html',
+  styleUrls: ['./teacher.page.scss']
 })
 
 
 
-export class AppCharacterPage implements AfterViewInit {
+export class AppTeacherPage implements AfterViewInit {
   /*  */
   public readonly displayedColumns: string[] = ['photo','name','age', 'patronus'];
-  /*   */
+   /*  */
   private DATA: Profile[] = [];
   /*  */
   public dataSource = new MatTableDataSource(this.DATA);
-  /*  */
-  public schoolSelected: string;
+
 
   @ViewChild(MatSort) sort: MatSort;
 
   constructor( 
     private _hogwartsService: HogwartsService,
     public util: UtilService){
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
-
-  /*  */
-  public refreshList(ev: Event){
-
-    this._hogwartsService.getByHouse(this.schoolSelected).subscribe(
+      
+    this._hogwartsService.getStaff().subscribe(
       ( profiles ) => {
+        //this.DATA =  profiles; 
         this.dataSource.data = profiles;
       }, 
       (err) => {
         console.log(err);
       }
     );
+  
+  }
 
-    this.schoolSelected
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 }

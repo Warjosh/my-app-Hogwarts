@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilService } from './core/services/util.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  constructor( ){}
+  public TITLE = 'my-app-Hogwarts';
+
+  constructor( public util: UtilService ){}
 }
