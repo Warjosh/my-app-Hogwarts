@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UtilService } from './core/services/util.service';
 
 @Component({
@@ -7,9 +7,14 @@ import { UtilService } from './core/services/util.service';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   public TITLE = 'Hogwarts App V.0.0.1';
-
-  constructor( public util: UtilService ){}
+  
+  constructor( 
+    public util: UtilService ){
+  }
+  ngOnInit(): void {
+    
+  }
 }

@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-teacher',
   templateUrl: './teacher.page.html',
-  styleUrls: ['./teacher.page.scss']
+  styleUrls: ['./teacher.page.scss'],
+  
 })
 
 export class AppTeacherPage{

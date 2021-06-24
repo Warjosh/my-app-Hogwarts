@@ -24,11 +24,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatButtonModule} from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AgePipe } from './shared/pipes/age.pipe';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DataTableComponent } from './shared/components/data-table.component';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { LoaderService } from './core/services/loader.service';
 
 
 
@@ -41,7 +44,8 @@ import { DataTableComponent } from './shared/components/data-table.component';
     AppTeacherPage,
     ProfileEditorComponent,
     DataTableComponent,
-    AgePipe
+    AgePipe,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -59,13 +63,15 @@ import { DataTableComponent } from './shared/components/data-table.component';
     MatDatepickerModule,
     MatNativeDateModule ,
     MatButtonModule,
-    MatPaginatorModule 
+    MatPaginatorModule,
+    MatProgressSpinnerModule 
   ],
   providers: [
     MatDatepickerModule,
     MatNativeDateModule, 
     HogwartsService,
-    UtilService
+    UtilService,
+    LoaderService
   ],
   bootstrap: [AppComponent]
 })

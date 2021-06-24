@@ -1,0 +1,29 @@
+div.back{
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.8;
+  background-color: rgb(0, 0, 0);
+}
+
+.loader-wrapper{
+
+  position: relative;
+  margin: 50% auto;
+
+}
+
+.loader-wrapper.medium {
+  
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+
+  .loader {
+    transform: scale(0.5);
+    background: none;
+  }
+}
