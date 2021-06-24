@@ -25,7 +25,8 @@ export class TransformDate {
     public static transformStringToDate(_string: string, _splitter: string): Date {
       let _values: string[] = _string.split(_splitter);
       _values[2] = _values[2].split('T')[0];
-      let _date = new Date(parseInt(_values[0]), parseInt(_values[1]) - 1, parseInt(_values[2]));
+      /* Error parse string to date */
+      let _date = new Date(parseInt(_values[2]), parseInt(_values[1]) - 1, parseInt(_values[0]));
       return _date;
     }
   

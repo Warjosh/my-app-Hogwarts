@@ -9,7 +9,7 @@ import { UtilService } from './core/services/util.service';
 
 export class AppComponent {
 
-  public TITLE = 'my-app-Hogwarts';
+  public TITLE = 'Hogwarts App V.0.0.1';
 
   constructor( public util: UtilService ){}
 }

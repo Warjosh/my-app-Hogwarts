@@ -1,55 +1,20 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
-
-import { Profile } from 'src/app/classes/profile';
-import { HogwartsService } from 'src/app/core/services/hogwarts.service';
-import { UtilService } from 'src/app/core/services/util.service';
-
-import {MatTableDataSource} from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
-
-
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character',
-  templateUrl: './character.page.html',
+  templateUrl:'./character.page.html',
   styleUrls: ['./character.page.scss']
 })
 
-
-
-export class AppCharacterPage implements AfterViewInit {
-  /*  */
-  public readonly displayedColumns: string[] = ['photo','name','age', 'patronus'];
-  /*   */
-  private DATA: Profile[] = [];
-  /*  */
-  public dataSource = new MatTableDataSource(this.DATA);
-  /*  */
-  public schoolSelected: string;
-
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor( 
-    private _hogwartsService: HogwartsService,
-    public util: UtilService){
+export class AppCharacterPage {
+  /* mode for datatable */
+  public mode: string = 'character';
+  
+  constructor( private router: Router ){
   }
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
-
   /*  */
-  public refreshList(ev: Event){
-
-    this._hogwartsService.getByHouse(this.schoolSelected).subscribe(
-      ( profiles ) => {
-        this.dataSource.data = profiles;
-      }, 
-      (err) => {
-        console.log(err);
-      }
-    );
-
-    this.schoolSelected
-  }
+  public back(){
+		this.router.navigate(['']);
+	}
 }

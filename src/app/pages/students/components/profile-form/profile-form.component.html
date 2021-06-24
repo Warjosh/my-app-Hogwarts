@@ -1,0 +1,96 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+	<h2>Profile</h2>
+	
+    <mat-form-field>
+			<mat-label for="name">Name</mat-label>
+			<input matInput placeholder="Name" id="name" type="text" formControlName="name" required>
+    </mat-form-field>  
+
+	
+		<mat-form-field>
+			<mat-label for="patronus">Patronus</mat-label>
+			<input matInput placeholder="Patronus" id="patronus" type="text" formControlName="patronus" required>
+		</mat-form-field>
+
+		<mat-form-field>
+			<mat-label for="birthDate">Birthdate</mat-label>
+			<input matInput [matDatepicker]="picker" placeholder="Birthdate" id="birthDate" formControlName="birthDate" required> 
+			<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>   
+
+		<mat-form-field>
+			<mat-label for="photo">Url of photo</mat-label>
+			<input matInput placeholder="Photo" id="photo" type="text" formControlName="photo" required [pattern]="PHOTO_URL">
+		</mat-form-field>   
+
+		<mat-form-field>
+			<mat-label for="species">Species</mat-label>
+    	<input matInput placeholder="Species" id="species" type="text" formControlName="species">
+    </mat-form-field> 
+
+		<mat-form-field>
+			<mat-label for="gender">Gender</mat-label>
+			<mat-select id="gender" formControlName="gender">
+				<mat-option value="male">male</mat-option>
+				<mat-option value="female">female</mat-option>
+			</mat-select>
+    </mat-form-field>   
+  
+		<mat-form-field>
+			<mat-label for="ancestry">Ancestry</mat-label>
+    	<input matInput placeholder="Ancestry" id="ancestry" type="text" formControlName="ancestry">
+    </mat-form-field>   
+  
+		<mat-form-field>
+			<mat-label for="eyeColor">Eye color</mat-label>
+    	<input matInput placeholder="Eye color" id="eyeColor" type="text" formControlName="eyeColor">
+    </mat-form-field>   
+  
+		<mat-form-field>
+			<mat-label for="hairColor">Hair color</mat-label>
+    	<input matInput placeholder="Hair color" id="hairColor" type="text" formControlName="hairColor" >
+    </mat-form-field> 
+  
+		<div formGroupName="wandForm">
+  
+			<h2>Wand</h2>
+	
+			<mat-form-field>
+        <mat-label for="core" >Core</mat-label>
+        <input matInput placeholder="Core" id="core" type="text" formControlName="core">
+      </mat-form-field>   
+  
+			<mat-form-field>
+        <mat-label for="length" >Length</mat-label>
+        <input matInput placeholder="Length" id="length" type="number" formControlName="length">
+      </mat-form-field>   
+  
+			<mat-form-field>
+        <mat-label for="wood" >Wood</mat-label>
+        <input matInput placeholder="Wood" id="wood" type="text" formControlName="wood">
+      </mat-form-field>   
+  
+		</div>
+    <div formGroupName="actorForm">
+  
+			<h2>Actor</h2>
+	
+			<mat-form-field>
+        <mat-label for="actor" >Actor</mat-label>
+        <input matInput placeholder="Core" id="actor" type="text" formControlName="actor">
+      </mat-form-field>   
+  
+			<mat-form-field >
+        <mat-label for="alive" >Alive</mat-label>
+				<mat-select id="alive" formControlName="alive">
+					<mat-option [value]="true">Yes</mat-option>
+					<mat-option [value]="false">No</mat-option>
+				</mat-select>
+      </mat-form-field>    
+    
+		</div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>

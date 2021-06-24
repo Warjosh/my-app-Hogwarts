@@ -1,1 +1,17 @@
-hey student pagessssssssssssssssssssssssssssssssssssss
+
+<div class="content">
+  <ng-container *ngIf="SHOW_FORM">
+    <app-profile-form ></app-profile-form>
+  </ng-container>
+  <ng-container *ngIf="!SHOW_FORM">
+    <app-data-table-component [mode]="mode"></app-data-table-component>
+  </ng-container>
+  <button *ngIf="!SHOW_FORM" mat-raised-button color="primary" (click)="showForm()">Add student</button>
+  <br>
+  <button *ngIf="!SHOW_FORM" mat-raised-button color="primary" (click)="back()">Back</button>
+  <button *ngIf="SHOW_FORM" mat-raised-button color="primary" (click)="hideForm()">Back</button>
+</div>
+
+
+
+

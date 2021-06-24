@@ -13,14 +13,22 @@ import { AppCharacterPage } from './pages/character/containers/character.page';
 import { AppStudentsPage } from './pages/students/containers/students.page';
 import { UtilService } from './core/services/util.service';
 import { HomePage } from './pages/home/containers/home.page';
+import { ProfileEditorComponent } from './pages/students/components/profile-form/profile-form.component';
 
 
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatButtonModule} from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AgePipe } from './shared/pipes/age.pipe';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DataTableComponent } from './shared/components/data-table.component';
 
 
 
@@ -31,6 +39,8 @@ import { AgePipe } from './shared/pipes/age.pipe';
     AppCharacterPage,
     AppStudentsPage,
     AppTeacherPage,
+    ProfileEditorComponent,
+    DataTableComponent,
     AgePipe
   ],
   imports: [
@@ -39,13 +49,21 @@ import { AgePipe } from './shared/pipes/age.pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
 
     MatSortModule,
     MatTableModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
+    MatButtonModule,
+    MatPaginatorModule 
   ],
   providers: [
+    MatDatepickerModule,
+    MatNativeDateModule, 
     HogwartsService,
     UtilService
   ],
