@@ -66,10 +66,10 @@ export class ProfileEditorComponent {
 	private clear () {
 		
 		this.profileForm = this.form.group({
-			name: ['', Validators.required],
-			species: [''],
-			patronus: [''],
-			photo: [''],
+			name: ['', Validators.required,Validators.pattern(this.TEXT)],
+			species: ['',Validators.pattern(this.TEXT)],
+			patronus: ['',Validators.pattern(this.TEXT)],
+			photo: ['',Validators.pattern(this.PHOTO_URL)],
 			gender: [''],
 			birthDate:[(new Date()).toISOString()],
 			ancestry: [''],
