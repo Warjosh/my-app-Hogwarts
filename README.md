@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
+#Sección de personajes 
+
+Se puede seleccionar la casa de hechicería a través de una lista desplegable (slytherin, gryffindor, ravenclaw y hufflepuff) por cada casa se deben consultar los personajes usando la API publica: http://hp-api.herokuapp.com/api/characters/house/{{nombreCasa}}, el listado de personajes debe mostrarse en una tabla con las siguientes columnas: name, patronus, age e image. 
+
+#Sección de estudiantes 
+
+Se puede consultar la lista de estudiantes a través del API publica http://hp-api.herokuapp.com/api/characters/students, la información obtenida debe mostrarse en una tabla con las siguientes columnas: name, patronus, age e image. 
+Debe existir una opción que permita agregar una solicitud de nuevo estudiante, estas solicitudes se deben almacenar localmente y mostrarse en una nueva pantalla, se recomienda usar Reactive Forms. 
+
+#Sección de profesores 
+
+Se puede consultar la lista de profesores a través del API publica, http://hp-api.herokuapp.com/api/characters/staff la información obtenida debe mostrarse en una tabla con las siguientes columnas: name, patronus, age e image.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
